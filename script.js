@@ -11,24 +11,17 @@ const formatter = new Intl.ListFormat('en', {
 const directories = {
     education: [
         '',
-        '<white>education</white>',
+        '<white>Education</white>',
 
-        '* <a href="https://en.wikipedia.org/wiki/Kielce_University_of_Technology">Kielce University of Technology</a> <yellow>"Computer Science"</yellow> 2002-2007 / 2011-2014',
-        '* <a href="https://pl.wikipedia.org/wiki/Szko%C5%82a_policealna">Post-secondary</a> Electronic School <yellow>"Computer Systems"</yellow> 2000-2002',
-        '* Electronic <a href="https://en.wikipedia.org/wiki/Technikum_(Polish_education)">Technikum</a> with major <yellow>"RTV"</yellow> 1995-2000',
+        '* <a href="https://www.neit.edu/">New England Institute of Techlogogy</a> <yellow>"Computer Science / Systems"</yellow> 2028-2032',
+        '* <a href="https://www.freecodecamp.org/">FreeCodeCamp.org</a> <yellow>"Coding Langueges"</yellow> 2000-2002',
         ''
     ],
     projects: [
         '',
-        '<white>Open Source projects</white>',
+        '<white>My Projects</white>',
         [
-            ['jQuery Terminal',
-             'https://terminal.jcubic.pl',
-             'library that adds terminal interface to websites'
-            ],
-            ['LIPS Scheme','https://lips.js.org', 'Scheme implementation in JavaScript'],
-            ['Sysend.js','https://jcu.bi/sysend', 'Communication between open tabs'],
-            ['Wayne','https://jcu.bi/wayne', 'Pure in browser HTTP requests'],
+            ['This Website','https://blog.theunfundedinnovator.site/',' website using jQuery terminal and copied code'],
         ].map(([name, url, description = '']) => {
             return `* <a href="${url}">${name}</a> &mdash; <white>${description}</white>`;
         }),
@@ -36,29 +29,27 @@ const directories = {
     ].flat(),
     skills: [
         '',
-        '<white>languages</white>',
+        '<white>Langueges</white>',
 
         [
             'JavaScript',
-            'TypeScript',
+            'HTML, JS, CSS',
             'Python',
-            'SQL',
             'PHP',
             'Bash'
         ].map(lang => `* <yellow>${lang}</yellow>`),
         '',
-        '<white>libraries</white>',
+        '<white>Libraries</white>',
         [
             'React.js',
-            'Redux',
-            'Jest',
         ].map(lib => `* <green>${lib}</green>`),
         '',
-        '<white>tools</white>',
+        '<white>Tools</white>',
         [
             'Docker',
             'git',
             'GNU/Linux'
+            'VMWare'
         ].map(lib => `* <blue>${lib}</blue>`),
         ''
     ].flat()
@@ -70,7 +61,7 @@ const root = '~';
 let cwd = root;
 
 const user = 'guest';
-const server = 'freecodecamp.org';
+const server = 'theunfundedinnovator.site';
 
 function prompt() {
     return `<green>${user}@${server}</green>:<blue>${cwd}</blue>$ `;
@@ -227,8 +218,8 @@ term.on('click', '.directory', function() {
 
 function ready() {
    const seed = rand(256);
-   term.echo(() => rainbow(render('Terminal Portfolio'), seed))
-       .echo('<white>Welcome to my Terminal Portfolio</white>\n').resume();
+   term.echo(() => rainbow(render('Unfunded 2.2'), seed))
+       .echo('<white>Terminal Portfolio</white>\n').resume();
 }
 
 function rainbow(string, seed) {
